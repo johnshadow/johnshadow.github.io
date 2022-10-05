@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel = "stylesheet" type = "text/css" href = "SSHistoryPages.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="Content-Type: text/html; charset=utf-8" />
+</head>
+
+<body>
+<!--Header Bar-->
+<div class="header">
+<div id="TileText">Another History Place</div>
+</div>
+<div style="overflow:auto">
+<!--Main Page-->
+<div class="main">
+<div class="article" id="articleBox">
+<h1>North Indian History From The Turn of The Century</h1>
+<h2>25BCE - 100CE</h2>
+<hr>
+<p>
+Sticky Navigation Example
+The navbar will stick to the top when you reach its scroll position.
+</p>
+
+<br>
+<img class="image" alt="ScythiansOrnament" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.thetimes.co.uk%2Fimageserver%2Fimage%2Fmethode%252Ftimes%252Fprod%252Fweb%252Fbin%252F73df5f70-2916-11e7-9d2e-96f2194e0ac4.jpg%3Fcrop%3D3742%252C2105%252C19%252C409&f=1&nofb=1">
+<br>
+
+<p>
+Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+</p>
+
+<br>
+<img class="image" alt="Gondaphores Shiva" src="https://coinquest.com/cq_data/cq_ro/coins_380/parthia_gondophares.jpg">
+<br>
+
+<p>
+Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+</p>
+
+<br>
+<img class="image" alt="Pursian Coin" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsarmaya.in%2Fmuseum%2Fwp-content%2Fuploads%2F2019%2F07%2FAlamgir-II-Silver-Rupee-Sarmaya-Arts-Foundation-Thumbnail.jpg&f=1&nofb=1">
+<br>
+
+<p>
+Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+</p>
+
+<br>
+<img class="image" alt="Temple Layout" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fs4.hubimg.com%2Fu%2F6470455_f248.jpg&f=1&nofb=1">
+<br>
+<figure>
+    <blockquote cite="https://www.huxley.net/bnw/four.html">
+        <p>Leaving the Jade Gate and the Suuny Barriers, one proceeds by the southern
+route, passes though Shanshan, travels to the south, then arrives at
+Wuyishanli. This is the end of the southern route, from where one turns
+north and then eastwards to reach Parthia.</p>
+    </blockquote>
+    <figcaption>—Aldous Huxley, <cite>Brave New World</cite></figcaption>
+</figure>
+<p>
+Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+
+Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+
+Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+
+Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+</p>
+<hr>
+<p>
+sources<br>
+नमस्कार<br>
+τοῦτο ἐστί ἠ γράφη<br>
+我嘗試那個想到。<br>
+אני<br>
+</p>
+</div>
+<!--Footer-->
+<div class="footer" id="footer">
+<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</div>
+</div>
+</div>
+<!-- The Modal -->
+<div id="modalDisp" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div class="caption" id="modalCaption"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("modalDisp");
+var caption = document.getElementById("modalCaption");
+var images = document.getElementsByClassName("image");
+
+var modalImg = document.getElementById("img01");
+for(var i = 0; i < images.length; i++)
+	images[i].onclick = function(){
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		caption.innerHTML = this.alt;
+	}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+</body>
+</html>
