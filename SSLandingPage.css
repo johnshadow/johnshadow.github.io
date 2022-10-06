@@ -43,7 +43,7 @@ body {
     padding: 10px;
     flex-wrap: wrap;
 }
-.clearfix a:hover {
+.clearfix a:hover { 
     display: inline;
     padding: 10px;
     color:var(--grey1);
