@@ -3,11 +3,11 @@
 }
 
 :root {
-  --aqua: #3fb5b4;
-  --rust: #db541c;
-  --grey1: #eeeeee;
-  --grey2: #a0a0a0;
-  --grey3: #505050;
+	--aqua: #3fb5b4;
+	--rust: #db541c;
+	--grey1: #eeeeee;
+	--grey2: #a0a0a0;
+	--grey3: #505050;
 }
 
 body{
