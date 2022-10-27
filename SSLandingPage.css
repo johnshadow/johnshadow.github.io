@@ -57,15 +57,15 @@ body {
 
 .grid-row{
     display: grid;
-    padding: 20px;
+    padding: 0px;
     grid-template-columns: 150px auto;
     column-gap: 50px;
     row-gap: 50px;
-    border: 15px solid var(--rust);
+    border: 15px solid var(--rust1);
 }
 
 .grid-row:hover{
-    background-image: linear-gradient(to right, var(--rust1) 0%, var(--aqua1) 50%, var(--rust) 50%, var(--rust) 100%);
+    background-image: linear-gradient(to right, var(--rust) 0%, var(--aqua1) 50%, var(--rust) 50%, var(--rust) 100%);
     background-attachment: fixed;
     background-size: 200% 100%;
     animation: gradient 500ms linear;
