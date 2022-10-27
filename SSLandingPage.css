@@ -6,6 +6,7 @@
     --grey1: #eeeeee;
     --grey2: #a0a0a0;
     --grey3: #505050;
+    --Animation: 0;
 }
 
 body {
@@ -51,22 +52,40 @@ body {
 }
 
 .grid-container {
+    background: var(--rust);
+}
+
+.grid-row{
     display: grid;
     padding: 20px;
     grid-template-columns: 150px auto;
-    background: var(--rust);
-    column-gap: 0px;
+    column-gap: 50px;
     row-gap: 50px;
+    border: 15px solid var(--rust);
 }
+
+.grid-row:hover{
+    background-image: linear-gradient(to right, var(--rust1) 0%, var(--aqua1) 50%, var(--rust) 50%, var(--rust) 100%);
+    background-attachment: fixed;
+    background-size: 200% 100%;
+    animation: gradient 500ms linear;
+    animation-direction:normal;
+}
+@keyframes gradient {
+    0% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
 .grid-item {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 120%;
-    background: var(--rust1);
     color: var(--grey1);
     padding: 10px;
+    background-color: rgba(0.0, 0.0, 0, 0.0);
 }
+
 .grid-item img {
     width: 100%;
     height: 100%;
