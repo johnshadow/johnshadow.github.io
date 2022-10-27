@@ -1,0 +1,169 @@
+<html>
+<head>
+<style>
+.NavHead {
+    background-color: lightgray;
+    padding: 5px;
+}
+
+</style>
+</head>
+<body>
+    <input type="text" id="Decline-Able" value="ܟܬܒ">
+    <button type="button" onclick="DeclineFunction()">Decline</button>
+    <p>Test Verb Table</p>
+
+<div class="NavFrame" style="display:inline-block">
+    <div class="NavHead" align="left" style="cursor: pointer;">
+    <span class="NavToggle">
+        <a id="palButton" role="button" onclick="DropDownFunction()">hide ▲</a>
+        </span>Pa'l Conjugation of <span lang="sy">
+    <strong class="CurrentWord">ܟܬܒ</strong>
+</div>
+<div class="NavHead" align="left" style="cursor: pointer;">
+<div class="NavContent" id="DropDownPal" align="center" style="display: block;">
+<table border="1" style="width:100%;border-collapse:collapse;line-height:2em;border:2px solid #000000;background:#fdfdfd;text-align:center" class="inflection-table">
+	<tbody>
+	<tr>
+		<th scope="row" colspan="2" style="background:#E4C0CF;border-right:2px solid">non-finite forms</th>
+		<td colspan="4" style="text-align:left">
+			<ul><li><b>from-infinitive:</b> <span class="Syri" lang="sy">ܡܶܟܬܰܒ</span>&lrm;</li>
+			<li><b>action noun:</b> <span class="Syri" lang="sy">ܟ݁ܬ݂ܳܒ݂ܳܐ</span>&lrm;</li>
+			<li><b>passive participle:</b> <span class="Syri" lang="sy">ܟܬܺܝܒ</span>&lrm;</li></ul>
+		</td>
+	</tr>
+	<tr style="border-top:2px solid">
+		<th colspan="2" rowspan="2" style="background:#E4C0CF;border-right:2px solid">finite forms</th>
+		<th scope="col" colspan="2" style="background:#C0CFE4">singular</th>
+		<th scope="col" colspan="2" style="background:#C0CFE4">plural</th>
+	</tr>
+	<tr>
+		<th scope="col" style="background:#C0CFE4">m.</th>
+		<th scope="col" style="background:#C0CFE4">f.</th>
+		<th scope="col" style="background:#C0CFE4">m.</th>
+		<th scope="col" style="background:#C0CFE4">f.</th>
+	</tr>
+		<tr style="border-top:2px solid">
+		<th scope="row" rowspan="3" style="background:#E2E4C0;width:1px">Perfect</th>
+		<th scope="row" style="background:#C0CFE4;border-right:2px solid;width:1px">first</th>
+		<td colspan="2"><span class="Syri" lang="sy">ܟܶܬܒܶܬ</span>&lrm;</td>
+		<td colspan="2"><span class="Syri" lang="sy">ܟܬܰܒܢ</span>&lrm;</td>
+	</tr>
+	<tr>
+		<th scope="row" style="background:#C0CFE4;border-right:2px solid">second</th>
+		<td><span class="Syri" lang="sy">ܟܬܰܒܬ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܬܰܒܬܝ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܬܰܒܬܽܘܢ</span>&lrm;<sup>1</sup></td>
+		<td><span class="Syri" lang="sy">ܟܬܰܒܬ̈ܶܝܢ</span>&lrm;<sup>1</sup></td>
+	</tr>
+	<tr>
+		<th scope="row" style="background:#C0CFE4;border-right:2px solid">third</th>
+		<td><span class="Syri" lang="sy">ܟܬܰܒ</strong></span></td>
+		<td><span class="Syri" lang="sy">ܟܶܬܒܰܬ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܬܰܒܘ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܬܰܒ̈ܝ</span>&lrm;<sup>2</sup></td>
+	</tr>
+	<tr style="border-top:2px solid">
+		<th scope="row" colspan="2" style="background:#E2E4C0;border-right:2px solid">present</th>
+		<td><span class="Syri" lang="sy">ܟܳܬܶܒ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܳܬܒܳܐ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܳܬܒܺܝܢ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܳܬ̈ܒܳܢ</span>&lrm;</td>
+	</tr>
+	<tr style="border-top:2px solid">
+		<th scope="row" rowspan="3" style="background:#E2E4C0">Imperfect</th>
+		<th scope="row" style="background:#C0CFE4;border-right:2px solid">first</th>
+		<td colspan="2"><span class="Syri" lang="sy">ܐܶܟܬܽܘܒ</span>&lrm;</td>
+		<td colspan="2"><span class="Syri" lang="sy">ܢܶܟܬܽܘܒ</span>&lrm;</td>
+	</tr>
+	<tr>
+		<th scope="row" style="background:#C0CFE4;border-right:2px solid">second</th>
+		<td><span class="Syri" lang="sy">ܬܶܟܬܽܘܒ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ִּܬܶܟܬܒܺܝܢ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܬܶܟܬܒܽܘܢ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܬܶܟ̈ܬܒܳܢ</span>&lrm;<sup>2</sup></td>
+	</tr>
+	<tr>
+		<th scope="row" style="background:#C0CFE4;border-right:2px solid">third</th>
+		<td><span class="Syri" lang="sy">ܢܶܟܬܽܘܒ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܬܶܟܬܽܘܒ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܢܶܟܬܒܽܘܢ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܢܶܟ̈ܬܒܳܢ</span>&lrm;<sup>2</sup></td>
+	</tr>
+	<tr style="border-top:2px solid">
+		<th scope="row" colspan="2" style="background:#E2E4C0;border-right:2px solid">imperative</th>
+		<td><span class="Syri" lang="sy">ܟܬܽܘܒ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܬܽܘܒܝ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܬܽܘܒܘ</span>&lrm;</td>
+		<td><span class="Syri" lang="sy">ܟܬܽܘܒ̈ܝ</span>&lrm;<sup>2</sup></td>
+	</tr>
+	<tr style="border-top:2px solid">
+		<th scope="row" colspan="2" style="background:#E4C0CF;border-right:2px solid">notes</th>
+		<td colspan="4" style="text-align:left;word-wrap:break-word;width:1px;padding-right:1em">
+			<!-- <ol>
+			<li>Pronounced <span lang="sy">ܡܡ</span>&lrm; and <span lang="sy">ܡܡ</span>&lrm; in informal Modern Hebrew.</li>
+			<li>Rare in Modern Hebrew.</li>
+			</ol>-->
+		</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+<script>
+    function DropDownFunction()
+    {
+        var drop = document.getElementById("DropDownPal");
+        var button = document.getElementById("palButton");
+        console.log(drop.style.getPropertyValue("display"));
+        if(drop.style.getPropertyValue("display") == "none")
+        {
+            drop.style.display = "block";
+            button.innerHTML = "hide ▲";
+        }
+        else
+        {
+            drop.style.display = 'none';
+            button.innerHTML = "hide ▼";
+        }
+    }
+	function DeclineFunction() {
+        const endings = ["+ܡ;", "-ܐ;", "_ܝ", "-ܰܬ;", "-ܢ;", "-ܬ;", "-ܬܝ;", "-ܬܽܘܢ;", "-ܬ̈ܶܝܢ;", "", "-ܰܬ;", "-ܘ;", "-̈ܝ;", "", "-ܳܐ;", "-ܺܝܢ;","-ܳܢ;", "_ܘ;ܐ+;", "_ܘ;ܢܶ+;", "_ܘ;ܬܶ+;", "-ܝܢ;ܬܶ+;", "-ܘܢ;ܬܶ+;", "-ܳܢ;ܬܶ+;", "_ܘ;ܢܶ+;", "_ܘ;ܬܶ+;", "-ܘܢ;ܢܶ+;", "-ܢ;ܢܶ+;", "_ܘ;", "_ܘ;ܝ-;", "_ܘ;ܘ-;", "_ܘ;̈ܝ-;"];
+        var inputRoot = document.getElementById("Decline-Able").value;
+
+        var names = document.getElementsByClassName("CurrentWord");
+		for(let k = 0; k < names.length; ++k)
+        {
+            names[k].innerHTML = inputRoot;
+        }
+
+		var syriacSlots = document.getElementsByClassName("Syri");
+        var tempRoot = "";
+		for(let k = 0; k < syriacSlots.length; ++k)
+		{
+            tempRoot = inputRoot;
+			selectedEnding = endings[k % endings.length];
+            //syriacSlots[k].innerHTML = interLoc;
+            if(selectedEnding.search(/\_/) != -1)
+            {
+                tempRoot = 
+                tempRoot.slice(0, tempRoot.length - 1) +
+                selectedEnding.split(/[_;]/)[1] +
+                tempRoot.slice(tempRoot.length - 1, tempRoot.length);
+            }
+            console.log("temp middle:" + selectedEnding.search(/\_/));
+
+            if(selectedEnding.search(/\+/) != -1)
+                tempRoot =  selectedEnding.split(/[+;]/)[1] + tempRoot;
+            console.log("temp front:" + selectedEnding.search(/\+/));
+
+            if(selectedEnding.search(/\-/) != -1)
+                tempRoot = tempRoot + selectedEnding.split(/[-;]/)[1];
+            console.log("temp back:" + selectedEnding.search(/\-/));
+
+			syriacSlots[k].innerHTML = tempRoot;
+		}
+    }
+</script>
+</body>
