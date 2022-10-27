@@ -1,6 +1,6 @@
 :root {
     --aqua: #3fb5b4;
-    --aqua1: #3aa8a7;
+    --aqua1: #2B7E7D;
     --rust: #db541c;
     --rust1: #cb4e1a;
     --grey1: #eeeeee;
@@ -65,7 +65,7 @@ body {
 }
 
 .grid-row:hover{
-    background-image: linear-gradient(to right, var(--rust) 0%, var(--aqua1) 50%, var(--rust) 50%, var(--rust) 100%);
+    background-image: linear-gradient(to right, var(--rust) 0%, var(--aqua) 50%, var(--rust) 50%, var(--rust) 100%);
     background-attachment: fixed;
     background-size: 200% 100%;
     animation: gradient 500ms linear;
