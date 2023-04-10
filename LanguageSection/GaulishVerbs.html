@@ -12,7 +12,9 @@
     <input type="text" id="Decline-Able" value="cor">
     <button type="button" onclick="DeclineFunction()">Decline</button>
     <p>Test Verb Table</p>
-
+	t-preterite <input type="checkbox" id="t-preterite">
+	irregular <input type="checkbox" id="irregular">
+	
 <table style="width: 100%; background: #EEE; border: 1px solid #AAA; font-size: 95%; text-align: center;" class="inflection-table vsSwitcher" data-toggle-category="inflection">
 <tr>
 <th colspan="8" class="vsToggleElement" style="background: rgb(204, 204, 204); text-align: left; cursor: pointer;">
@@ -170,6 +172,19 @@
 <td><span lang="ga" class="Conjugate"><p></p></span>
 </td>
 </tr>
+<tr class="vsHide" style="">
+<th rowspan="1" style="background:#c0e4c0">passive
+</th>
+<th style="background:#c0e4c0">present
+</th>
+<td><span lang="ga" class="Conjugate"><p></p></span>
+<td><span lang="ga" class="Conjugate"><p></p></span>
+<td><span lang="ga" class="Conjugate"><p></p></span>
+<td><span lang="ga" class="Conjugate"><p></p></span>
+<td><span lang="ga" class="Conjugate"><p></p></span>
+<td><span lang="ga" class="Conjugate"><p></p></span>
+</td>
+</tr>
 </tr>
 <tr class="vsHide" style="">
 <th colspan="2" rowspan="2" style="background:#e4d4c0">Imperative
@@ -268,26 +283,72 @@
     }
 	function DeclineFunction() {
         const endings = [
-"-iu;", "-is;", "-it;", "-omasi;", "-ete;", "-onti",
-"-onni;", "-ito;", "-et;", "-omes;", "-etes;", "-ontes",
-"-ssiu;", "-sses;", "-sseti;", "-ssomasi;", "-ssete;", "-ssonti",
-"-an;", "-a;", "-as;", "-mo;", "-te;", "-ar",
+		"-iu;", "-is;", "-it;", "-omasi;", "-ete;", "-onti",
+		"-om;", "-ito;", "-et;", "-omes;", "-etes;", "-ontes",
+		"-ssiu;", "-sses;", "-sseti;", "-ssomasi;", "-ssete;", "-ssonti",
+		"-an;", "-a;", "-as;", "-mo;", "-te;", "-ar",
 
-"-ior;", "-itar;", "-itur;", "-omor;", "-edde;", "-ontor",
-"-etio;", "-ontes",
-"-ssior;", "-ssetar;", "-ssetur;", "-ssomor;", "-ssedde;", "-ssontor",
-"-to;", "-tiunts",
+		"-ior;", "-itar;", "-itur;", "-omor;", "-edde;", "-ontor",
+		"-etio;", "-ontes",
+		"-ssior;", "-ssetar;", "-ssetur;", "-ssomor;", "-ssedde;", "-ssontor",
+		"-to;", "-tiunts",
 
-"-su;", "-stes;", "-sta;", "-somas;", "-sete;", "-sont",
+		"-su;", "-stes;", "-sta;", "-somas;", "-sete;", "-sont",
+		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
 
-"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
-"-s;", "-eto;", "-edde;", "-ento;",
+		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
+		"-s;", "-eto;", "-edde;", "-ento;",
 
-"=-tos;", "=-mnos;", "=-ta;", "=-mna;", "=-ton;", "=-mnon;",
-"-anna"
-];
+		"=-tos;", "=-imnos;", "=-ta;", "=-imna;", "=-ton;", "=-imnon;",
+		"=-ton"
+		];
+		
+		const endings_t = [
+		"-u;", "-is;", "-it;", "-omasi;", "-ete;", "-onti",
+		"-om;", "-s;", "-t;", "-me;", "-te;", "-ant",
+		"-ssiu;", "-sses;", "-sseti;", "-ssomasi;", "-ssete;", "-ssonti",
+		"-an;", "-a;", "-as;", "-mo;", "-te;", "-ar",
+
+		"-ior;", "-itar;", "-itur;", "-omor;", "-edde;", "-ontor",
+		"-etio;", "-ontes",
+		"-ssior;", "-ssetar;", "-ssetur;", "-ssomor;", "-ssedde;", "-ssontor",
+		"-to;", "-tiunts",
+
+		"-su;", "-stes;", "-sta;", "-somas;", "-sete;", "-sont",
+		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
+
+		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
+		"-s;", "-eto;", "-edde;", "-ento;",
+
+		"=-tos;", "=-imnos;", "=-ta;", "=-imna;", "=-ton;", "=-imnon;",
+		"=-ton"
+		];
+
+		const endings_i = [
+		"-ami;", "-as;", "-at;", "-amasi;", "-ate;", "-anti",
+		"-om;", "-asas;", "-ato;", "-ame;", "-ate;", "-ant",
+		"-asu;", "-ases;", "-aseti;", "-asomasi;", "-asete;", "-asonti",
+		"-an;", "-as;", "-at;", "-ame;", "-te;", "-ar",
+
+		"-ar;", "-atar;", "-atur;", "-amor;", "-adde;", "-antor",
+		"-etio;", "-ontes",
+		"-assior;", "-assetar;", "-assetur;", "-assomor;", "-assedde;", "-assontor",
+		"-to;", "-tiunts",
+
+		"-su;", "-stes;", "-sta;", "-somas;", "-sete;", "-sont",
+		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
+
+		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
+		"-s;", "-eto;", "-edde;", "-ento;",
+
+		"=-tos;", "=-amnos;", "=-ta;", "=-amna;", "=-ton;", "=-amnon;",
+		"=-ton"
+		];
+
         var inputRoot = document.getElementById("Decline-Able").value;
-
+		var swapEndingT = document.getElementById("t-preterite").checked;
+		var swapEndingI = document.getElementById("irregular").checked;
+		
         var names = document.getElementsByClassName("CurrentWord");
 		for(let k = 0; k < names.length; ++k)
         {
@@ -297,33 +358,35 @@
 		var wordSlots = document.getElementsByClassName("Conjugate");
         var tempRoot = "";
 		var deroot = "";
+		var rLocation = 0;
+		var vowelLocation = 0;
 		for(let k = 0; k < wordSlots.length; ++k)
 		{
             tempRoot = inputRoot;
-			selectedEnding = endings[k % endings.length];
+			if(swapEndingT)
+				selectedEnding = endings_t[k % endings.length];
+			else if(swapEndingI)
+				selectedEnding = endings_i[k % endings.length];
+			else
+				selectedEnding = endings[k % endings.length];
             //wordSlots[k].innerHTML = interLoc;
-            if(selectedEnding.search(/\_/) != -1)
-            {
-                tempRoot = 
-                tempRoot.slice(0, tempRoot.length - 1) +
-                selectedEnding.split(/[_;]/)[1] +
-                tempRoot.slice(tempRoot.length - 1, tempRoot.length);
-            }
 			if(selectedEnding.search(/\=/) != -1)
 			{
 				deroot = inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
-				if(inputRoot.indexOf("r") != 0) //vowel first
-					tempRoot = inputRoot.replace(/[aeiou]/gi, '') + inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
-				else
-					tempRoot = tempRoot + "i";
+				rLocation = inputRoot.indexOf("r");
+				vowelLocation = inputRoot.search(/[aeiou]/);
+				if(rLocation > 0) //vowel first
+				{
+					tempRoot = tempRoot.replace("r", "#");
+					tempRoot = tempRoot.replace(inputRoot[vowelLocation], "r");
+					tempRoot = tempRoot.replace("#", inputRoot[vowelLocation]);
+					console.log("Temp Root:" + tempRoot + "," + inputRoot[vowelLocation] + "," + inputRoot[rLocation]);
+					//tempRoot = inputRoot.replace(/[aeiou]/gi, '') + inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
+				}
+				else if(tempRoot[tempRoot.length - 1] != inputRoot[vowelLocation] && vowelLocation != 0)
+					tempRoot += "i";
 			}
 			
-            console.log("temp middle:" + selectedEnding.search(/\_/));
-
-            if(selectedEnding.search(/\+/) != -1)
-                tempRoot =  selectedEnding.split(/[+;]/)[1] + tempRoot;
-            console.log("temp front:" + selectedEnding.search(/\+/));
-
             if(selectedEnding.search(/\-/) != -1)
                 tempRoot = tempRoot + selectedEnding.split(/[-;]/)[1];
             console.log("temp back:" + selectedEnding.search(/\-/));
@@ -333,6 +396,26 @@
 			tempRoot = tempRoot.replace("ao", "aio");
 			tempRoot = tempRoot.replace("gs", "x");
 			tempRoot = tempRoot.replace("kx", "x");
+			tempRoot = tempRoot.replace("gt", "xt");
+			tempRoot = tempRoot.replace("bss", "xs");
+			
+			//remove double vowel
+			tempRoot = tempRoot.replace("aa", "a");
+			tempRoot = tempRoot.replace("ii", "i");
+			tempRoot = tempRoot.replace("oo", "o");
+			tempRoot = tempRoot.replace("uu", "u");
+			tempRoot = tempRoot.replace("ee", "e");
+			
+			tempRoot = tempRoot.replace(/(.)(?=.*\2)/g, "");
+			
+			tempRoot = tempRoot.replace("ssss", "dd");
+			tempRoot = tempRoot.replace("sss", "dd");
+			tempRoot = tempRoot.replace("dt", "s");
+			tempRoot = tempRoot.replace("st", "s");
+			tempRoot = tempRoot.replace("ds", "dd");
+			tempRoot = tempRoot.replace("dds", "dd");
+			tempRoot = tempRoot.replace("nt", "t");
+			tempRoot = tempRoot.replace("tt", "t");
 			
 			wordSlots[k].innerHTML = tempRoot;
 		}
