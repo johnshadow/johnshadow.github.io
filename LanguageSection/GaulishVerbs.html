@@ -283,7 +283,7 @@
 "-i;", "-etu;", "-omas;", "-ete;", "-ontu",
 "-s;", "-eto;", "-edde;", "-ento;",
 
-"=-tos;", "=-mnos;", "=-ti;", "=-mni;", "=-ton;", "=-mnon;",
+"=-tos;", "=-mnos;", "=-ta;", "=-mna;", "=-ton;", "=-mnon;",
 "-anna"
 ];
         var inputRoot = document.getElementById("Decline-Able").value;
@@ -294,13 +294,14 @@
             names[k].innerHTML = inputRoot;
         }
 
-		var syriacSlots = document.getElementsByClassName("Conjugate");
+		var wordSlots = document.getElementsByClassName("Conjugate");
         var tempRoot = "";
-		for(let k = 0; k < syriacSlots.length; ++k)
+		var deroot = "";
+		for(let k = 0; k < wordSlots.length; ++k)
 		{
             tempRoot = inputRoot;
 			selectedEnding = endings[k % endings.length];
-            //syriacSlots[k].innerHTML = interLoc;
+            //wordSlots[k].innerHTML = interLoc;
             if(selectedEnding.search(/\_/) != -1)
             {
                 tempRoot = 
@@ -309,8 +310,14 @@
                 tempRoot.slice(tempRoot.length - 1, tempRoot.length);
             }
 			if(selectedEnding.search(/\=/) != -1)
-				tempRoot = inputRoot.replace(/[aeiou]/gi, '') + inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
-				
+			{
+				deroot = inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
+				if(inputRoot.indexOf("r") != 0) //vowel first
+					tempRoot = inputRoot.replace(/[aeiou]/gi, '') + inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
+				else
+					tempRoot = tempRoot + "i";
+			}
+			
             console.log("temp middle:" + selectedEnding.search(/\_/));
 
             if(selectedEnding.search(/\+/) != -1)
@@ -321,7 +328,13 @@
                 tempRoot = tempRoot + selectedEnding.split(/[-;]/)[1];
             console.log("temp back:" + selectedEnding.search(/\-/));
 			
-			syriacSlots[k].innerHTML = tempRoot;
+			//remove illegal combinations
+			tempRoot = tempRoot.replace("ae", "ai");
+			tempRoot = tempRoot.replace("ao", "aio");
+			tempRoot = tempRoot.replace("gs", "x");
+			tempRoot = tempRoot.replace("kx", "x");
+			
+			wordSlots[k].innerHTML = tempRoot;
 		}
     }
 </script>
