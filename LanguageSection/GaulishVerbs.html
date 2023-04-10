@@ -283,7 +283,7 @@
 "-i;", "-etu;", "-omas;", "-ete;", "-ontu",
 "-s;", "-eto;", "-edde;", "-ento;",
 
-"-itos;", "-imnos;", "-iti;", "-imni;", "-iton;", "-imnon;",
+"=-itos;", "=-imnos;", "=-iti;", "=-imni;", "=-iton;", "=-imnon;",
 "-anna"
 ];
         var inputRoot = document.getElementById("Decline-Able").value;
@@ -308,6 +308,9 @@
                 selectedEnding.split(/[_;]/)[1] +
                 tempRoot.slice(tempRoot.length - 1, tempRoot.length);
             }
+			if(selectedEnding.search(/\=/) != -1)
+				tempRoot = inputRoot.replace(/[aeiou]/gi, '') + inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
+				
             console.log("temp middle:" + selectedEnding.search(/\_/));
 
             if(selectedEnding.search(/\+/) != -1)
@@ -317,7 +320,7 @@
             if(selectedEnding.search(/\-/) != -1)
                 tempRoot = tempRoot + selectedEnding.split(/[-;]/)[1];
             console.log("temp back:" + selectedEnding.search(/\-/));
-
+			
 			syriacSlots[k].innerHTML = tempRoot;
 		}
     }
