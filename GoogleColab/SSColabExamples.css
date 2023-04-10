@@ -1,0 +1,116 @@
+:root{
+    --aqua: #3fb5b4;
+    --aqua1: #2B7E7D;
+    --rust: #db541c;
+    --rust1: #cb4e1a;
+    --grey1: #eeeeee;
+    --grey2: #a0a0a0;
+    --grey3: #505050;
+    --Animation: 0;
+}
+
+body{
+    font-family: Arial;
+    margin: 0;
+}
+
+.header{
+    padding: 5px;
+    background: var(--grey3);
+    color: white;
+    font-size: 30px;
+}
+
+.footer{
+    background: var(--grey3);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.clearfix {display:inline-block;}
+/* Hide from IE Mac \*/
+.clearfix {display:block;}
+/* End hide from IE Mac */
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix a {
+    display: inline;
+    padding: 10px;
+    color:var(--grey1);
+    background: var(--grey3);
+    flex-wrap: wrap;
+	text-decoration:none;
+}
+.clearfix a:hover { 
+    display: inline;
+    padding: 10px;
+    color:var(--grey1);
+    background: var(--rust1);
+	text-decoration:none;
+}
+
+.grid-container {
+    background: var(--rust);
+}
+
+.grid-row{
+    display: grid;
+    padding: 0px;
+    grid-template-columns: 150px auto;
+    column-gap: 50px;
+    row-gap: 50px;
+    border: 15px solid var(--rust1);
+}
+
+.grid-row:hover{
+    background-image: linear-gradient(to right, var(--rust) 0%, var(--aqua) 50%, var(--rust) 50%, var(--rust) 100%);
+    background-attachment: fixed;
+    background-size: 200% 100%;
+    animation: gradient 500ms linear;
+    animation-direction:normal;
+}
+
+@keyframes gradient {
+    0% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120%;
+    color: var(--grey1);
+    padding: 10px;
+    background-color: rgba(0.0, 0.0, 0, 0.0);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+	max-width:512px;
+	max-height:512px;
+}
+
+.row {
+    display: flex;
+    background: var(--grey2);
+    flex-wrap: wrap;
+}
+
+.row a {
+    flex: 30%;
+    padding: 1%;
+}
+.row img {
+    transition: transform .5s;
+}
+.row img:hover {
+  transform: scale(1.1);
+}
