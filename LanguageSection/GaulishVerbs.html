@@ -94,7 +94,7 @@
 </td>
 </tr>
 <tr class="vsHide" style="">
-<th rowspan="4" style="background:#c0cfe4">middle/passive
+<th rowspan="4" style="background:#c0cfe4">middle
 </th>
 <th style="background:#c0cfe4">present
 </th>
@@ -173,7 +173,7 @@
 </td>
 </tr>
 <tr class="vsHide" style="">
-<th rowspan="1" style="background:#c0e4c0">passive
+<th rowspan="1" style="background:#c0e4c0">middle
 </th>
 <th style="background:#c0e4c0">present
 </th>
@@ -207,7 +207,7 @@
 <th style="background:#e4d4c0;width:12.5%"><p title="third person">third</a>
 </th></tr>
 <tr class="vsHide" style="">
-<th rowspan="2" style="background:#e4d4c0">active
+<th rowspan="1" style="background:#e4d4c0">active
 </th>
 <th style="background:#e4d4c0">present
 </th>
@@ -219,49 +219,60 @@
 <td><span lang="ga" class="Conjugate"><p></p></span>
 </td>
 </tr>
-<th style="background:#e4d4c0">preterite
-</th>
-<td><span lang="ga" class=""><p>-</p></span>
-<td><span lang="ga" class="Conjugate"><p></p></span>
-<td><span lang="ga" class="Conjugate"><p></p></span>
-<td><span lang="ga" class=""><p>-</p></span>
-<td><span lang="ga" class="Conjugate"><p></p></span>
-<td><span lang="ga" class="Conjugate"><p></p></span>
-</td>
 <tr>
-<th colspan="2" style="background:#e0e0b0">
-</th>
+<th colspan="2" rowspan="2"  style="background:#e0e0b0">participle
 <th colspan="3" style="background:#e0e0b0">active
 </th>
 <th colspan="3" style="background:#e0e0b0">middle/passive
+</th>
+</tr>
+<tr class="vsHide" style="">
+<th style="background:#e0e0b0;width:12.5%"><p title="first person">m</a>
+</th>
+<th style="background:#e0e0b0;width:12.5%"><p title="second person">f</a>
+</th>
+<th style="background:#e0e0b0;width:12.5%"><p title="third person">n</a>
+</th>
+<th style="background:#e0e0b0;width:12.5%"><p title="first person">m</a>
+</th>
+<th style="background:#e0e0b0;width:12.5%"><p title="third person">f</a>
+</th>
+<th style="background:#e0e0b0;width:12.5%"><p title="first person">n</a>
 </th></tr>
+</th>
 <tr>
-<th rowspan="3"  style="background:#e0e0b0">participle
+<th colspan="2" style="background:#e0e0b0">Present
 </th>
-<th style="background:#e0e0b0">m
-</th>
-<td colspan="3" class="Conjugate">
+<td colspan="1" class="Conjugate">
 </td>
-<td colspan="3" class="Conjugate">
+<td colspan="1" class="Conjugate">
+</td>
+<td colspan="1" class="Conjugate">
+</td>
+<td colspan="1" class="Conjugate">
+</td>
+<td colspan="1" class="Conjugate">
+</td>
+<td colspan="1" class="Conjugate">
 </td></tr>
 <tr>
-<th style="background:#e0e0b0">f
-</th>
-<td colspan="3" class="Conjugate">
+<th colspan="2" style="background:#e0e0b0">Past
+<td colspan="1" class="Conjugate">
 </td>
-<td colspan="3" class="Conjugate">
-</td></tr>
-<tr>
-<th style="background:#e0e0b0">n
-</th>
-<td colspan="3" class="Conjugate">
+<td colspan="1" class="Conjugate">
 </td>
-<td colspan="3" class="Conjugate">
+<td colspan="1" class="Conjugate">
+</td>
+<td colspan="1" class="Conjugate">
+</td>
+<td colspan="1" class="Conjugate">
+</td>
+<td colspan="1" class="Conjugate">
 </td></tr>
 <tr class="vsHide" style="">
 <th colspan="2" rowspan="1" style="background:#e0e0b0">gerund
 </th>
-<td colspan="6"><span lang="ga" class="Conjugate"><p></p></span>
+<td colspan="6"><span lang="ga" class="Conjugate"><p></p></span></td>
 </tr>
 </tbody>
 <script>
@@ -283,7 +294,7 @@
     }
 	function DeclineFunction() {
         const endings = [
-		"-iou;", "-is;", "-it;", "-omasi;", "-ete;", "-onti",
+		"-u;", "-is;", "-it;", "-omasi;", "-ete;", "-onti",
 		"-om;", "-ito;", "-et;", "-omes;", "-etes;", "-ontes",
 		"-ssiu;", "-sses;", "-sseti;", "-ssomasi;", "-ssete;", "-ssonti",
 		"-an;", "-as;", "-e;", "-mo;", "-e;", "-ar",
@@ -297,14 +308,14 @@
 		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
 
 		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
-		"-s;", "-eto;", "-edde;", "-ento;",
 
-		"=-tos;", "=-mnos;", "=-ta;", "=-mna;", "=-ton;", "=-mnon;",
-		"$-anna"
+		"-ontos;", "-unos;", "-onta;", "-una;", "-onton;", "-unon;",
+		"=-tos;", "=-unos;", "=-ta;", "=-una;", "=-ton;", "=-unon;",
+		"$-onnos"
 		];
 		
 		const endings_t = [
-		"-iou;", "-is;", "-it;", "-omasi;", "-ete;", "-onti",
+		"-u;", "-is;", "-it;", "-omasi;", "-ete;", "-onti",
 		"-om;", "-ito;", "-et;", "-omes;", "-etes;", "-ontes",
 		"-ssiu;", "-sses;", "-sseti;", "-ssomasi;", "-ssete;", "-ssonti",
 		"-an;", "-s;", "-t;", "-me;", "-e;", "-ant",
@@ -318,10 +329,10 @@
 		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
 
 		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
-		"-s;", "-eto;", "-edde;", "-ento;",
 
-		"=-tos;", "=-mnos;", "=-ta;", "=-mna;", "=-ton;", "=-mnon;",
-		"$-anna"
+		"-ontos;", "-unos;", "-onta;", "-una;", "-onton;", "-unon;",
+		"=-tos;", "=-unos;", "=-ta;", "=-una;", "=-ton;", "=-unon;",
+		"$-onnos"
 		];
 
 		const endings_i = [
@@ -339,10 +350,10 @@
 		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
 
 		"-i;", "-etu;", "-amas;", "-ete;", "-antu",
-		"-s;", "-eto;", "-edde;", "-ento;",
 
-		"=-tos;", "=-mnos;", "=-ta;", "=-mna;", "=-ton;", "=-mnon;",
-		"$-anna"
+		"-antos;", "-unos;", "-anta;", "-una;", "-anton;", "-unon;",
+		"=-tos;", "=-nos;", "=-ta;", "=-na;", "=-ton;", "=-non;",
+		"$-annos"
 		];
 
         var inputRoot = document.getElementById("Decline-Able").value;
