@@ -309,7 +309,7 @@
 
 		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
 
-		"-ntos;", "-unos;", "-nta;", "-una;", "-nton;", "-unon;",
+		"$-ntos;", "-unos;", "$-nta;", "-una;", "$-nton;", "-unon;",
 		"=-tos;", "=-unos;", "=-ta;", "=-una;", "=-ton;", "=-unon;",
 		"$-nnos"
 		];
@@ -330,7 +330,7 @@
 
 		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
 
-		"-ntos;", "-unos;", "-nta;", "-una;", "-nton;", "-unon;",
+		"$-ntos;", "-unos;", "$-nta;", "-una;", "$-nton;", "-unon;",
 		"=-tos;", "=-unos;", "=-ta;", "=-una;", "=-ton;", "=-unon;",
 		"$-nnos"
 		];
@@ -351,9 +351,9 @@
 
 		"-i;", "-etu;", "-amas;", "-ete;", "-antu",
 
-		"-ntos;", "-unos;", "-nta;", "-una;", "-nton;", "-unon;",
+		"-antos;", "-unos;", "-anta;", "-una;", "-anton;", "-unon;",
 		"=-tos;", "=-nos;", "=-ta;", "=-na;", "=-ton;", "=-non;",
-		"$-nnos"
+		"-annos"
 		];
 
         var inputRoot = document.getElementById("Decline-Able").value;
@@ -402,9 +402,13 @@
 					tempRoot = inputRoot.substring(0, inputRoot.length - 1);
 			}
 			
+			//check if there's no inbetween vowel
 			if(selectedEnding.search(/\$/) != -1)
 			{
-				
+				vowelLocation = inputRoot.search(/[aeiou]/);
+				endLocation = inputRoot.length-1;
+				if(vowelLocation != endLocation && inputRoot[endLocation] != "n")
+					tempRoot = tempRoot + "o";
 			}
 			
             if(selectedEnding.search(/\-/) != -1)
