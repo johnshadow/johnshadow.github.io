@@ -13,6 +13,10 @@
     <button type="button" onclick="DeclineFunction()">Decline</button>
     <p>Test Verb Table</p>
 	t-preterite <input type="checkbox" id="t-preterite">
+	s-preterite <input type="checkbox" id="s-preterite">
+	u-preterite <input type="checkbox" id="u-preterite">
+	u-subjunctive <input type="checkbox" id="u-subjunctive">
+	f-stem <input type="checkbox" id="f-stem">
 	irregular <input type="checkbox" id="irregular">
 	
 <table style="width: 100%; background: #EEE; border: 1px solid #AAA; font-size: 95%; text-align: center;" class="inflection-table vsSwitcher" data-toggle-category="inflection">
@@ -94,7 +98,7 @@
 </td>
 </tr>
 <tr class="vsHide" style="">
-<th rowspan="4" style="background:#c0cfe4">middle
+<th rowspan="3" style="background:#c0cfe4">middle
 </th>
 <th style="background:#c0cfe4">present
 </th>
@@ -125,17 +129,6 @@
 <td><span lang="ga" class="Conjugate"><p></p></span>
 <td><span lang="ga" class="Conjugate"><p></p></span>
 <td><span lang="ga" class="Conjugate"><p></p></span>
-<td><span lang="ga" class="Conjugate"><p></p></span>
-</td>
-</tr>
-<tr class="vsHide" style="">
-<th style="background:#c0cfe4">preterite
-</th>
-<td><span lang="ga" class=""><p>-</p></span>
-<td><span lang="ga" class=""><p>-</p></span>
-<td><span lang="ga" class="Conjugate"><p></p></span>
-<td><span lang="ga" class=""><p>-</p></span>
-<td><span lang="ga" class=""><p>-</p></span>
 <td><span lang="ga" class="Conjugate"><p></p></span>
 </td>
 </tr>
@@ -263,11 +256,11 @@
 </td>
 <td colspan="1" class="Conjugate">
 </td>
-<td colspan="1" class="Conjugate">
+<td><span lang="ga" class=""><p>-</p></span>
 </td>
-<td colspan="1" class="Conjugate">
+<td><span lang="ga" class=""><p>-</p></span>
 </td>
-<td colspan="1" class="Conjugate">
+<td><span lang="ga" class=""><p>-</p></span>
 </td></tr>
 <tr class="vsHide" style="">
 <th colspan="2" rowspan="1" style="background:#e0e0b0">gerund
@@ -292,72 +285,61 @@
             button.innerHTML = "more ▼";
         }
     }
+	
+	function GetRawStem(input)
+	{
+		var splitLocation = 0;
+		for(var i = 0; i < input.length - 1; ++i)
+			if("aeiAEI".indexOf(input[i]) == -1)
+			{
+				splitLocation = i;
+				break;
+			}
+		return input.substring(splitLocation, input.length);
+	}
+	
 	function DeclineFunction() {
-        const endings = [
-		"-u;", "-isi;", "-iti;", "-omasi;", "-ete;", "-onti",
-		"-om;", "-ito;", "-et;", "-omes;", "-etes;", "-ontes",
-		"-ssiu;", "-sses;", "-sseti;", "-ssomasi;", "-ssete;", "-ssonti",
-		"-an;", "-a;", "-as;", "-mo;", "-te;", "-ant",
+        const endings_regular = [
+		"u", "esi", "eti", "omasi", "ete", "onti",
+		"ema", "eta", "eto", "emo", "esse", "ento",
+		"fassiu", "fassies", "fassieti", "fassiomasi", "fassiete", "fassionti",
 
-		"-ior;", "-itar;", "-itur;", "-omor;", "-edde;", "-ontor",
-		"-etoi;", "-ontoi",
-		"-ssior;", "-ssetar;", "-ssetur;", "-ssomor;", "-ssedde;", "-ssontor",
-		"-to;", "-tiunts",
+		"or", "itar", "itur", "omor", "edde", "ontor",
+		"etoi", "ontoi",
+		"fassior", "fassitar", "fassitur", "fassiomor", "fassidde", "fassiontor",
 
-		"-su;", "-ses;", "-sat;", "-somas;", "-sete;", "-sont",
-		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
+		"$asu", "$ases", "$aset", "$asomas", "$asete", "$asont",
+		"$asur", "$aster", "$astar", "$asomor", "$asede", "$asontor",
 
-		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
+		"i", "etou", "omas", "ete", "ontou",
 
-		"$-ntos;", "$-nta;", "$-nton;", "-unos;", "-una;", "-unon;",
-		"-ios;", "-ia;", "-ion;", "=-tos;", "=-ta;", "=-ton;",
-		"$-nna"
+		"ontos", "onta", "onton", "unos", "una", "unon",
+		"tos", "ta", "ton",
+		"anna"
+		];
+		
+		const endings = [
+		"a", "as", "e", "mo", "te", "ars",
 		];
 		
 		const endings_t = [
-		"-u;", "-esi;", "-eti;", "-omasi;", "-ete;", "-onti",
-		"-om;", "-ito;", "-et;", "-omes;", "-etes;", "-ontes",
-		"-ssiu;", "-sses;", "-sseti;", "-ssomasi;", "-ssete;", "-ssonti",
-		"-an;", "-s;", "-t;", "-me;", "-te;", "-ant",
-		
-		"-ior;", "-itar;", "-itur;", "-omor;", "-edde;", "-ontor",
-		"-etoi;", "-ontoi",
-		"-ssior;", "-ssetar;", "-ssetur;", "-ssomor;", "-ssedde;", "-ssontor",
-		"-to;", "-tiunts",
-
-		"-su;", "-ses;", "-sat;", "-somas;", "-sete;", "-sont",
-		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
-
-		"-i;", "-etu;", "-omas;", "-ete;", "-ontu",
-
-		"$-ntos;", "$-nta;", "$-nton;", "-unos;", "-una;", "-unon;",
-		"-ios;", "-ia;", "-ion;", "=-tos;", "=-ta;", "=-ton;",
-		"$-nna"
+		"an", "s", "t", "me", "te", "ant"
 		];
 
-		const endings_i = [
-		"-mi;", "-si;", "-ti;", "-masi;", "-te;", "-nti",
-		"-m;", "-sas;", "-to;", "-me;", "-te;", "-nt",
-		"-ssiu;", "-sses;", "-sseti;", "-ssiomasi;", "-ssiete;", "-ssionti",
-		"-n;", "-s;", "-t;", "-me;", "-te;", "-ant",
+		const endings_s = [
+		"sam", "s", "st", "sme", "ste", "sant",
+		];
 
-		"-r;", "-tar;", "-tur;", "-mor;", "-dde;", "-ntor",
-		"-toi;", "-ntoi",
-		"-ssior;", "-ssetar;", "-ssetur;", "-ssomor;", "-ssedde;", "-ssontor",
-		"-to;", "-tiunts",
-
-		"-su;", "-ses;", "-sat;", "-somas;", "-sete;", "-sont",
-		"-sur;", "-ster;", "-star;", "-somor;", "-sede;", "-sontor",
-
-		"-;", "-etu;", "-mas;", "-te;", "-ntu",
-
-		"-ntos;", "-nta;", "-nton;", "-unos;", "-una;", "-unon;",
-		"=-ios;", "=-ia;", "=-ion;", "=-tos;", "=-ta;", "=-ton;",
-		"-nna"
+		const endings_u = [
+		"u", "us", "u", "amo", "ate", "ars",
 		];
 
         var inputRoot = document.getElementById("Decline-Able").value;
 		var tpreterite = document.getElementById("t-preterite").checked;
+		var spreterite = document.getElementById("s-preterite").checked;
+		var upreterite = document.getElementById("u-preterite").checked;
+		var usubjunctive = document.getElementById("u-subjunctive").checked;
+		var fstem = document.getElementById("f-stem").checked;
 		var irregularRoot = document.getElementById("irregular").checked;
 		
         var names = document.getElementsByClassName("CurrentWord");
@@ -367,69 +349,114 @@
         }
 
 		var wordSlots = document.getElementsByClassName("Conjugate");
-        var tempRoot = "";
-		var deroot = "";
-		var strippedBase = "";
-		var rLocation = 0;
-		var vowelLocation = 0;
-		var boolCheckSandhi = false;
-		var endLocation = 0;
+        var tempRoot = inputRoot;
+		var currentEnding = "";
+		var splitLocation = 0;
+		var endCheck1 = ("aeiouAEIOU".indexOf(tempRoot[tempRoot.length - 1]) != -1);
+		var endCheck2 = ("lrLR".indexOf(tempRoot[tempRoot.length - 2]) != -1);
+		
+		var sandhiCheck = false;
+		if(endCheck1)
+			sandhiCheck = "gcbGCB".indexOf(tempRoot[tempRoot.length - 2]) != -1;
+		else
+			sandhiCheck = "gcbGCB".indexOf(tempRoot[tempRoot.length - 1]) != -1;
+		
 		for(let k = 0; k < wordSlots.length; ++k)
 		{
-			endLocation = inputRoot.length-1;
-            tempRoot = inputRoot;
-			if(tpreterite)
-				selectedEnding = endings_t[k % endings.length];
-			else if(irregularRoot)
-				selectedEnding = endings_i[k % endings.length];
-			else
-				selectedEnding = endings[k % endings.length];
-            //wordSlots[k].innerHTML = interLoc;
-			if(selectedEnding.search(/\=/) != -1)
+			var toggelSandhi = false;
+			var toggelNSandhi = false;
+			tempRoot = inputRoot;
+			if(irregularRoot && k == 0)
+				tempRoot += "mi";
+			else if(k >= 18 && k < 24)
 			{
-				deroot = inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
-				vowelLocation = inputRoot.search(/[aeiou]/);
-				
-				boolCheckSandhi = inputRoot[vowelLocation] == 'i' && inputRoot[vowelLocation] == 'a' || inputRoot[endLocation] == 'n' || inputRoot.search(/[cg]/) != -1;
-				
-				if(endLocation > 0 && vowelLocation != 0 && !boolCheckSandhi) //vowel first
+				toggelSandhi = true;
+				if(endCheck1 || usubjunctive)
 				{
-					tempRoot = tempRoot.replace(inputRoot[endLocation], "#");
-					tempRoot = tempRoot.replace(inputRoot[vowelLocation], inputRoot[endLocation]);
-					tempRoot = tempRoot.replace("#", inputRoot[vowelLocation]);
-					console.log("Temp Root:" + tempRoot + "," + inputRoot[vowelLocation] + "," + inputRoot[endLocation]);
-					//tempRoot = inputRoot.replace(/[aeiou]/gi, '') + inputRoot.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
-				} else if (inputRoot[endLocation] == 'n')
-					tempRoot = inputRoot.substring(0, inputRoot.length - 1);
-			}
-			
-			
-			//check if there's no inbetween vowel
-			if(selectedEnding.search(/\$/) != -1)
-			{
-				boolCheckSandhi = -(inputRoot[endLocation]).search(/[aeiou]/);
-				if(boolCheckSandhi)
-					if(inputRoot[endLocation] == "g" || inputRoot[endLocation] == "c")
-						tempRoot = tempRoot + "iii";
+					if(tempRoot[tempRoot.length - 1] == 'a')
+					{
+						tempRoot = tempRoot.replace("iia", "i");
+						tempRoot = tempRoot.replace("ina", "i");
+					}
 					else
-						tempRoot = tempRoot + "a";
-				console.log("check:" + tempRoot + "Sandhi-check:"+!boolCheckSandhi);
+						tempRoot = tempRoot.replace("ii", "i");
+					tempRoot = tempRoot.substring(0, tempRoot.length - 1);
+				}
+				if(tpreterite)
+					tempRoot += endings_t[k - 18];
+				else if(spreterite)
+					tempRoot += endings_s[k - 18];
+				else if(upreterite)
+					tempRoot += endings_u[k - 18];
+				else
+					tempRoot += endings[k - 18];
+				if(fstem) //b color from duplicated f
+				{
+					tempRoot = "b" + tempRoot;
+					tempRoot = tempRoot.replace("arsc", "roc");
+				}
 			}
-			
-            if(selectedEnding.search(/\-/) != -1)
+			else
 			{
-				strippedBase = selectedEnding.split(/[-;]/)[1];
-				if(inputRoot[endLocation] == "i" && strippedBase[0] == "i")
-					tempRoot = tempRoot.slice(0, -1);
-				tempRoot = tempRoot + selectedEnding.split(/[-;]/)[1];
+				currentEnding = endings_regular[k >= 18 ? k - 6 : k];
+				if(currentEnding[0] == '$' || currentEnding[0] == 'f')
+				{
+					toggelSandhi = true;
+					toggelNSandhi = true;
+					if(currentEnding[0] == 'f' && fstem)
+						tempRoot = "b" + tempRoot;
+					if(usubjunctive)
+						currentEnding = currentEnding.substring(3, currentEnding.length);
+					else if(sandhiCheck)
+						currentEnding = currentEnding.substring(2, currentEnding.length);
+					else
+						currentEnding = currentEnding.substring(1, currentEnding.length);
+					if(endCheck1 && sandhiCheck)
+						tempRoot = tempRoot.substring(0, tempRoot.length - 1);
+				}
+				if(endCheck1)
+				{
+					console.log(currentEnding);
+					currentEnding = GetRawStem(currentEnding);
+					console.log(currentEnding);
+				}
+				tempRoot += currentEnding;
 			}
-            console.log("temp back:" + selectedEnding.search(/\-/));
 			
-			tempRoot = tempRoot.replace("gs", "x");
-			tempRoot = tempRoot.replace("cs", "x");
-			tempRoot = tempRoot.replace("gt", "xt");
-			tempRoot = tempRoot.replace("ct", "xt");
-			tempRoot = tempRoot.replace("nx", "x");
+			if(toggelNSandhi)
+			{
+				tempRoot = tempRoot.replace("ngs", "x");
+				tempRoot = tempRoot.replace("ncs", "x");
+			}
+			
+			if(toggelSandhi || endCheck2 || fstem)
+			{
+				tempRoot = tempRoot.replace("gs", "x");
+				tempRoot = tempRoot.replace("cs", "x");
+				tempRoot = tempRoot.replace("bs", "x");
+				tempRoot = tempRoot.replace("gt", "xt");
+				tempRoot = tempRoot.replace("ct", "xt");
+				tempRoot = tempRoot.replace("bt", "xt");
+				tempRoot = tempRoot.replace("bm", "bu");
+				tempRoot = tempRoot.replace("gm", "gu");
+				tempRoot = tempRoot.replace("cm", "cu");
+				tempRoot = tempRoot.replace("cx", "x");
+				tempRoot = tempRoot.replace("ddss", "ddiss");
+				tempRoot = tempRoot.replace("sss", "sis");
+
+				tempRoot = tempRoot.replace("rm", "ru");
+				tempRoot = tempRoot.replace("rn", "r");
+				tempRoot = tempRoot.replace("lm", "lu");
+			}
+			
+			tempRoot = tempRoot.replace("nm", "nu");
+			tempRoot = tempRoot.replace("mn", "un");
+			tempRoot = tempRoot.replace("dt", "dd");
+			tempRoot = tempRoot.replace("aa", "a");
+			tempRoot = tempRoot.replace("ao", "a");
+			tempRoot = tempRoot.replace("uu", "u");
+			tempRoot = tempRoot.replace("ui", "ii");
+			tempRoot = tempRoot.replace("ee", "ei");
 			
 			wordSlots[k].innerHTML = tempRoot;
 		}
