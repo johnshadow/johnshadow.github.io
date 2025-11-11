@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/*This makes a bunch of variables for later use*/
+:root{
+    --aqua: #3fb5b4;
+    --aqua1: #2B7E7D;
+    --rust: #db541c;
+    --rust1: #cb4e1a;
+    --grey1: #eeeeee;
+    --grey2: #a0a0a0;
+    --grey3: #505050;
+    --Animation: 0;
+}
+
+body{
+    font-family: Arial;
+    margin: 0;
+}
+
+
+/* -Stuff for navbar- */
+
+
+/*This makes the navagation bar sticky*/
+.fixed-top {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center; /* Vertically centers items */
+    padding: 5px;
+    padding-left: 30px;
+    background: var(--aqua);
+    color: white;
+    font-size: 15px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns all items to the left */
+}
+
+.title {
+    margin-right: auto; /* Pushes the logo to the left and the menu to the right */
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-left: 20px; /* Adds left spacing ->*/
+    padding-right: 20px; /* Adds right spacing <-*/
+}
+.menu li a{
+    padding: 10px; 
+    font-size: 25px;
+}
+.menu li a:hover{
+    color:var(--grey1);
+    background: var(--aqua1);
+}
+
+
+/* -Stuff for Grids and sectioning- */
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "image content";
+  grid-template-columns: 1fr 3fr;
+  gap: 3px;
+  padding: 5px;
+}
+.container div {
+  background-color: white;
+  padding: 10px;
+}
+.container div.image {
+  grid-area: image;
+}
+.container div.content {
+  grid-area: content;
+}
+
+/* -Image Looks- */
+
+#Image-Border {
+  border-radius: 25px;
+  background-color: var(--rust);
+  padding: 20px;
+}
+
+/* -footer section- */
+
+
+.footer{
+    background: var(--aqua);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+</style>
+</head>
+<body>
+    <!-- This is a navagation bar for the head of the screen -->
+    <!-- Make nav bar stick to the top even with scroll-->
+    <nav class="navbar fixed-top">
+        <h1 class="title">John's Website</h1>
+        <ul class="menu">
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
+    <!--pad out some of the webpage-->
+    <p><br/><br/><br/></p>
+    <!--Introduction-->
+    <div class="container">
+        <div class="image"><img src="Images/PlaceHolder.png" id="Image-Border"></div>
+        <div class="content"><h3>Hello I'm John</h3><p>I am a programmer and developer, I make games and like working on different projects ranging from rendering on the GPU to Random Web Development projects (such as this one). I make games as a hobby and also play them quite a bit.</p></div>
+    </div>
+
+    <!--Colab-->
+    <div class="container">
+        <div class="image"><img src="Images/Colab.png" id="Image-Border"></div>
+        <div class="content"><h3>Google Colab</h3><p>Google colab has been helpful for running and looking into the latest AI projects. It can run on your computer or your phone, all the compute is done one googles servers. It also uses Jupyter Notebook. which I use for programming in python often!</p></div>
+    </div>
+
+    <!--Itch-->
+    <div class="container">
+        <div class="image"><img src="Images/Itch.png" id="Image-Border"></div>
+        <div class="content"><h3>Itch</h3><p>I have an Itch! These are all games that I have made and can be played on your phone or in one case just your computer with a controller. These games were made in C# inside of Unity. I have been making games from a young age, sense around 11 and have been doing it for fun ever sense.</p></div>
+    </div>
+
+    <!--GitHub-->
+    <div class="container">
+        <div class="image"><img src="Images/GitHub.png" id="Image-Border"></div>
+        <div class="content"><h3>Git Hub</h3><p>I have a Git Hub! I don't upload or commit to projects often. Usually when I upload its elsewhere like on Google Drive or Itch. Recently I have been most active on Itch making and uploading different games.</p></div>
+    </div>
+    <div class="footer">
+        <p> John Sherfey ©2025 </p>
+    </div>
+<div>
+    
+</div>
+</body>
+</html>
